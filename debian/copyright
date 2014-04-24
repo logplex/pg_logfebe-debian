@@ -1,0 +1,4 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: pg_logfebe
+Upstream-Contact: daniel@heroku.com
+Source: http://github.com/logplex/pg_logfebe

@@ -1,0 +1,14 @@
+Source: pg-logfebe
+Priority: extra
+Maintainer: Daniel Farina <daniel@heroku.com>
+Uploaders: Daniel Farina <daniel@heroku.com>
+Build-Depends: debhelper (>= 8.0.0), postgresql-server-dev-all (>= 148~)
+Standards-Version: 3.9.4
+Section: database
+Homepage: http://github.com/logplex/pg_logfebe
+
+Package: postgresql-PGVERSION-logfebe
+Architecture: any
+Depends: postgresql-PGVERSION, ${shlibs:Depends}, ${misc:Depends}
+Provides: postgresql-logfebe
+Description: Allows forwarding of detailed PostgreSQL logs to a unix socket.

@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+include /usr/share/postgresql-common/pgxs_debian_control.mk
+clean: debian/control
+.PHONY: debian/control
+
+override_dh_auto_build:
+	+pg_buildext build $(CURDIR) build-%v
+
+clean:
+	+pg_buildext clean $(CURDIR) build-%v
+	rm -rf build-?.? debian/postgresql-?.?-logfebe debian/*.substvars doc/logfebe.html
+	dh $@
+
+override_dh_auto_install:
+	+pg_buildext install $(CURDIR) build-%v postgresql-%v-logfebe
+
+%:
+	dh $@
